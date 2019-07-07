@@ -39,7 +39,7 @@ class G(nn.Module): # We introduce a class to define the generator. # Module ref
     def __init__(self): # We introduce the __init__() function that will define the architecture of the generator. #self denotes the future object that will be created
         super(G, self).__init__() # We inherit from the nn.Module tools.
         self.main = nn.Sequential( # We create a meta module of a neural network that will contain a sequence of modules (convolutions, full connections, etc.).
-            # We need to begin with inverse convolutions becuase the generator has to make some fake images-> It will take input as vectors[here,noise] and  
+            # We need to begin with inverse convolutions because the generator has to make some fake images-> It will take input as vectors[here,noise] and  
             nn.ConvTranspose2d(100, 512, 4, 1, 0, bias = False), # We start with an inversed convolution.
             nn.BatchNorm2d(512), # We normalize all the features along the dimension of the batch.
             nn.ReLU(True), # We apply a ReLU rectification to break the linearity.
